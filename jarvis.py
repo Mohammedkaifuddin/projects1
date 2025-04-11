@@ -1,11 +1,13 @@
 import pyttsx3  # type: ignore
 import speech_recognition as sr  # type: ignore
 import datetime
-import wikipedia
+import wikipedia # type: ignore 
 import webbrowser
 import os
 import subprocess  # This module allows us to run system-level commands like opening apps
 import smtplib
+from datetime import date
+
 
 email = {
     "kaif":"mdkaif111967@gmail.com",
@@ -96,6 +98,10 @@ if __name__ == '__main__':
         elif 'the time' in query:
             strTime = datetime.datetime.now().strftime("%H:%M:%S")
             speak(f"kaif, The time is {strTime}")
+
+        elif 'the date' in query:
+            today_date = date.today()
+            speak(f"kaif, today date is {today_date}")
 
         elif 'open vs code' in query:
             os.startfile("C:\\Users\\name\\AppData\\Local\\Programs\\Microsoft VS Code\\Code.exe")
