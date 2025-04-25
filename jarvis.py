@@ -50,8 +50,8 @@ def takecommand():
     except Exception as e:
         print(e)
         say_again = "say that again please...."
-        #speak(say_again)
         print(say_again)
+        speak(say_again)
         return "None"  # returning "None" string
     return query
 
@@ -90,12 +90,12 @@ if __name__ == '__main__':
 
         #plays music
         elif 'play music' in query:
-            music_dir = "C:\\Users\\name\\Music\\favourite_songs"
+            music_dir = "C:\\Users\\name\\Music\\favourite_song"
             songs = os.listdir(music_dir)
             print(songs,"\n")
             os.startfile(os.path.join(music_dir, songs[0]))
 
-        elif 'the time' in query:
+        elif 'time' in query:
             strTime = datetime.datetime.now().strftime("%H:%M:%S")
             speak(f"kaif, The time is {strTime}")
 
@@ -105,6 +105,7 @@ if __name__ == '__main__':
 
         elif 'open vs code' in query:
             os.startfile("C:\\Users\\name\\AppData\\Local\\Programs\\Microsoft VS Code\\Code.exe")
+            speak("opening vs code")
 
 
         elif 'open whatsapp' in query:
